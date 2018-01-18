@@ -15,7 +15,7 @@ body{
     line-height: 1.428571429;
     color: #333333;
     background-color: #ffffff;
-    background-image: url("../../img/bg/84923.jpg");
+    background-image: url("../../img/bg/84924.jpg");
 }
 
 .container{
@@ -53,7 +53,7 @@ h2{
     text-align: center;
 }
 
-/* a:link {color:#000000;}         未访问链接 */
-/* a:visited {color:#00FF00;}      已访问链接 */
-/* a:hover {color:#FF00FF;}        鼠标移动到链接上 */
-/* a:active {color:#0000FF;}       鼠标点击时 */
+a:link {color:#000000;}         /* 未访问链接*/
+a:visited {color:#00FF00;}      /* 已访问链接 */
+a:hover {color:#FF00FF;}        /* 鼠标移动到链接上 */
+a:active {color:#0000FF;}       /* 鼠标点击时 */
