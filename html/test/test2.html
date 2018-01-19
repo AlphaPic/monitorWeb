@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="test2.js"></script>
+    <link rel="stylesheet" href="test2.css">
     <title>验证码验证</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="jumbotron">
+            <strong><h2 class="text-center">注册渠道</h2></strong>
+            <form role="form" class="form-horizontal" onsubmit="return verifyAuthcode()">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <select class="form-control" id="contract-way" onchange="show_payee()">
+                                <option value="mobile">手机</option>
+                                <option value="email">邮箱</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contract-text" placeholder="Enter Mobile">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="authCode" placeholder="Enter the AuthCode">
+                        </div>
+                        <button onclick="getAuthCode()" type="button" id="getAuthcode-btn" class="btn btn-default col-sm-4">获取验证码</button>
+                </div>
+                <div class="button">
+                    <button type="submit" class="btn btn-primary btn-block" id="login-btn">校验</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <!-- <img src="../../img/bg/84922.jpg" class="img-res" alt="响应式布局"> -->
+        </div>
+    </div>
 </body>
 </html>
