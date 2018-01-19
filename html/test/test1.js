@@ -38,18 +38,14 @@ function checkForm(){
         return false;
     }
 
-    var parent = passwordEnsure.parent();
     /* 判断两个密码是不是相等 */
     if(passwordReg.test(passwordEnsure.val()) == false || passwordEnsure.val() !== passwordOrigin.val()){
+        var parent = passwordEnsure.parent();
         parent.addClass("has-error");
         $("#helpBlockPasswordEnsure").remove();//先删除
         passwordEnsure.after('<span id=\"helpBlockPasswordEnsure\" class=\"help-block\">密码不一致</span>');
         return false;
-    }else{
-        $("#helpBlockPasswordEnsure").remove();
-        parent.removeClass("has-error");
     }
-    
     alert("成功");
     return false;
 }

@@ -31,7 +31,7 @@ body{
 
 
 .jumbotron{
-    background-color: #ffffff;
+    background-color: #f7b7b7;
     margin-left: 30%;
     margin-right: 30%;
     border:2px, #333333;
@@ -53,7 +53,7 @@ h2{
     text-align: center;
 }
 
-/* a:link {color:#000000;}         未访问链接 */
-/* a:visited {color:#00FF00;}      已访问链接 */
-/* a:hover {color:#FF00FF;}        鼠标移动到链接上 */
-/* a:active {color:#0000FF;}       鼠标点击时 */
+a:link {color:#000000;}         /* 未访问链接*/
+a:visited {color:#00FF00;}      /* 已访问链接 */
+a:hover {color:#FF00FF;}        /* 鼠标移动到链接上 */
+a:active {color:#0000FF;}       /* 鼠标点击时 */
