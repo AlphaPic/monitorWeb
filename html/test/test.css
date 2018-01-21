@@ -57,3 +57,10 @@ h2{
 /* a:visited {color:#00FF00;}      已访问链接 */
 /* a:hover {color:#FF00FF;}        鼠标移动到链接上 */
 /* a:active {color:#0000FF;}       鼠标点击时 */
+
+.registry-tips{
+    padding-top:25px;
+    padding-bottom:25px;
+    padding-right:30%;
+    padding-left:30%;
+}

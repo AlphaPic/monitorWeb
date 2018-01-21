@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap 实例</title>
+  <title>monitor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
   <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="test.js"></script>
   <link rel="stylesheet" href="test.css">
+  <link rel="shortcut icon" href="../../img/icon/g1.ico"/>
 </head>
 <body>
 <div class="container">
     <div class="jumbotron">
         <strong><h2 class="text-center">Monitor</h2></strong>
-        <form role="form">
+        <form role="form" onsubmit="return login();">
             <div class="form-group">
                 <label for="username">UserName</label>
                 <div>
-                    <input type="text" class="form-control input-sm" id="username" placeholder="Enter Name">
+                    <input type="text" class="form-control" id="username" placeholder="Enter Name">
                 </div>
             </div>
             <br>
             <div class="form-group">
                     <label for="password">Password</label>
                     <div>
-                        <input type="password" class="form-control input-sm" id="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
             </div>
             <div class="button">
                 <button type="submit" class="btn btn-primary btn-block" id="login-btn">登录</button>
             </div>
         </form>
-        <a href="test2.html" class="">没有账号?立即注册</a>
+        <div class="registry-tips">
+            <a href="test2.html" class="">没有账号?立即注册</a>
+        </div>
     </div>
     <div>
         <!-- <img src="../../img/bg/84922.jpg" class="img-res" alt="响应式布局"> -->

@@ -1,24 +1,25 @@
 'use strict';
 
 /** 设置请求的参数 */
-function setParams(method,version){
-    if(arguments.length < 2 || arguments.length > 3){
+function setParams(paramObj){
+    if(arguments.length !== 1){
         return "";
     }
-    var basicReq = "method=" + method + "&version=" + version;
     
-    alert(basicReq);
-    if(arguments.length === 2){
-        return basicReq;
+    if(("method" in paramObj === false) || ("version" in paramObj === false)){
+        return "";
     }
 
     
-    /** 遍历参数 */
-    var paramObj  = JSON.parse(arguments[2]);
+    /** 设置所有方法的基本信息 */
+    var requestString = "method=" + paramObj["method"] + "&version=" + paramObj["version"];
+    delete paramObj["method"];
+    delete paramObj["version"];
+
     for(var key in paramObj){
-        var member = "&" + key + "=";
-        member += paramObj[key];
-        basicReq += member;
+        var value = paramObj[key];
+        var elem = key + "=" + value;
+        requestString += "&" + elem;
     }
-    return basicReq;
+    return requestString;
 }
