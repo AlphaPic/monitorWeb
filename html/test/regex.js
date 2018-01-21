@@ -23,3 +23,14 @@ function checkMobileSyntax(){
     
     return mobileReg.test(mobileNum);
 }
+
+/** 验证码校验 */
+function checkAuthCode(authCode){
+    if(authCode == null){
+        return false;
+    }
+
+    var authCodeReg = new RegExp("[a-z0-9]{8}");
+
+    return authCodeReg.test(authCode);
+}

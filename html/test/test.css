@@ -64,3 +64,9 @@ h2{
     padding-right:30%;
     padding-left:30%;
 }
+
+.monitor-text{
+    color: #0099ff;
+    text-align: center;
+    padding-bottom: 10%;
+}

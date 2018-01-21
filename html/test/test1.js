@@ -12,11 +12,11 @@ function checkForm(){
         born                = $("#datetimepicker"),
 
         /* --------------------非必须信息------------------- */
-        addressDetail       = $("#text-address-detail"),
-        company             = $("#text-company"),
-        mobile              = $("#text-mobile"),
-        email               = $("#text-email"),
-        hobby               = $("#text-hobby");
+        addressDetail       = $("#text-address-detail").val(),
+        company             = $("#text-company").val(),
+        mobile              = $("#text-mobile").val(),
+        email               = $("#text-email").val(),
+        hobby               = $("#text-hobby").val();
 
     var userNameReg = new RegExp('^[0-9a-zA-Z]{9,16}$'); //用户名必须是9位数以上的数字或者英文字母
     
@@ -49,7 +49,61 @@ function checkForm(){
         $("#helpBlockPasswordEnsure").remove();
         parent.removeClass("has-error");
     }
+
+    /** 获取注册性别 */
+    var sex = $("input[name='optionsRadios']:checked");
+    if(sex.val() === undefined || sex.val() === null){
+        $(".sex-not-selected").removeAttr("hidden");
+        return false;
+    }
     
-    alert("成功");
+    /** 获取国籍 */
+    var country  = $("#select-country").val() === "请选择" ? null : $("#select-country").val();
+    var province = $("#select-province").val() === "请选择" ? null : $("#select-province").val();
+    var city     = $("#select-city").val() === "请选择" ? null : $("#select-city").val();
+    
+    /** 注册 */
+    registry();
+
+    $("#registry-btn").text("正在注册,请稍后...").attr("disabled","disabled");
     return false;
+}
+
+/** 性别按钮的选中事件 */
+$(document).on('ready',function(){ 
+    /** 性别的选择事件 */
+    $("input[name='optionsRadios']").change(function () {
+        //隐藏提示
+        $(".sex-not-selected").attr("hidden","");
+    });
+
+    /** 国家的选择事件 */
+    $("#select-country").change(function(){
+        /** 删除省份和城市的所有信息 */
+        var country = $("#select-country");
+
+        getProvinceByCountry();
+    });
+
+    /** 省份的选择事件 */
+    $("#select-province").change(function(){
+        var province = $("#select-province");
+
+        getCityByProvince();
+    });
+});
+
+/** 通过国家来选择省份 */
+function getProvinceByCountry(){
+
+}
+
+/** 通过省份来选择城市 */
+function getCityByProvince(){
+
+}
+
+/** 注册参数 */
+function registry(){
+
 }

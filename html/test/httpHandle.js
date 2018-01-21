@@ -23,3 +23,11 @@ function setParams(paramObj){
     }
     return requestString;
 }
+
+/** 获取浏览器中的cookie */
+function getLocalCookie(){
+    var cookies = document.cookie;
+    var arr = cookies.split(";");
+    // for()
+    return "";
+}

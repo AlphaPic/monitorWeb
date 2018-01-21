@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label for="password" class="col-sm-3">确认密码*</label>
                     <div class="col-sm-9">
-                        <input type="password" class="form-control" id="text-password-ensure" placeholder="Password">
+                        <input type="password" class="form-control" id="text-password-ensure" placeholder="Password" value="AAAAAAAAA">
                     </div>
                 </div>
                 <!-- 出生年月 -->
@@ -50,14 +50,17 @@
                     <div class="col-sm-9">
                         <div class="radio-inline">
                             <label>
-                                <input type="radio" name="optionsRadios" id="male" value="option1">男
+                                <input type="radio" name="optionsRadios" value="male">男
                             </label>
                         </div>
                         <div class="radio-inline">
                             <label>
-                                <input type="radio" name="optionsRadios" id="female" value="option2">女
+                                <input type="radio" name="optionsRadios" value="female">女
                             </label>
-                        </div>  
+                        </div>
+                        <div>
+                            <label class="sex-not-selected" hidden>性别没有选择</label>
+                        </div>
                     </div>
                 </div>
                 <!-- 地址 -->
@@ -65,29 +68,18 @@
                     <label for="form-control" class="col-sm-3">地址</label>
                     <div class="col-sm-3">
                         <select class="form-control" id="select-country">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                <option>请选择</option>
+                                <option>中国</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
                         <select class="form-control" id="select-province">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                <option>请选择</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
                             <select class="form-control" id="select-city">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>请选择</option>
                             </select>
                         </div>
                 </div>
@@ -134,7 +126,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit">提交注册</button>
+                    <button class="btn btn-primary btn-block" type="submit" id="registry-btn">提交注册</button>
                 </div>
             </form>
         </div>
