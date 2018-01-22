@@ -2,6 +2,7 @@
 
 /* 注册逻辑 */
 // $("#datetimepicker").datetimepicker({format: 'yyyy-mm-dd'});
+document.write("<script type='text/javascript' src='httpHandle.js'></script>");  
 
 function checkForm(){
     var 
@@ -63,7 +64,7 @@ function checkForm(){
     var city     = $("#select-city").val() === "请选择" ? null : $("#select-city").val();
     
     /** 注册 */
-    registry();
+    registry(userNameInput,passwordOrigin,passwordEnsure,country,province,city,addressDetail,sex,company,mobile,email,hobby);
 
     $("#registry-btn").text("正在注册,请稍后...").attr("disabled","disabled");
     return false;
@@ -80,30 +81,122 @@ $(document).on('ready',function(){
     /** 国家的选择事件 */
     $("#select-country").change(function(){
         /** 删除省份和城市的所有信息 */
-        var country = $("#select-country");
+        var country = $("#select-country").val();
 
-        getProvinceByCountry();
+        getProvinceByCountry(country);
     });
 
     /** 省份的选择事件 */
     $("#select-province").change(function(){
-        var province = $("#select-province");
+        var province = $("#select-province").val();
+        var country  = $("#select-country").val();
 
-        getCityByProvince();
+        getCityByProvince(country,province);
     });
 });
 
 /** 通过国家来选择省份 */
-function getProvinceByCountry(){
+function getProvinceByCountry(countryName){
+    if(countryName === "请选择"){
+        $("#select-province").empty().append("<option>请选择</option>");
+        $("#select-city").empty().append("<option>请选择</option>");
+        return true;
+    }
 
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function(){
+        if(request.readyState == 4){
+            if(request.status === 200){
+                getProvinceSuccess(request.response);
+            }else {
+                getProvinceFail("fail");
+            }
+        }else{
+
+        }
+    }
+
+    var paramObj = createBaseRequestParam('com.fan.user.getProvinces','1.0.0');
+
+    paramObj.country = countryName;
+
+    var paramString = setParams(paramObj);
+    request.open('GET','http://pc.pavingstone.com/monitor/rest.do?' + paramString,true);
+    request.send();
+}
+
+/** 成功获取到省份的值 */
+function getProvinceSuccess(response){
+    var json = JSON.parse(response);
+    if(json.date === undefined || json.date === null || json.date.provinces == null){
+        return false;
+    }
+    var arr = json.date.provinces;
+    var provinceSelect = $("#select-province");
+    provinceSelect.empty();
+    arr.sort();
+    for(var i = 0;i < arr.length;i++){
+        var opt = "<option>" + arr[i] + "</option>";
+        provinceSelect.append(opt);
+    }
+
+    getCityByProvince($("#select-country").val(),$("#select-province").val());
+}
+
+/** 获取省份值失败 */
+function getProvinceFail(){
+    
 }
 
 /** 通过省份来选择城市 */
-function getCityByProvince(){
+function getCityByProvince(countryName,provinceName){
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function(){
+        if(request.readyState == 4){
+            if(request.status === 200){
+                getCitySuccess(request.response);
+            }else {
+                getCityFail(request.response);
+            }
+        }else{
+
+        }
+    }
+
+    var paramObj = createBaseRequestParam('com.fan.user.getCities','1.0.0');
+
+    paramObj.province = provinceName;
+    paramObj.country  = countryName;
+
+    var paramString = setParams(paramObj);
+    request.open('GET','http://pc.pavingstone.com/monitor/rest.do?' + paramString,true);
+    request.send();
+}
+
+/** 获取城市成功 */
+function getCitySuccess(response){
+    var json = JSON.parse(response);
+    if(json.date === undefined || json.date === null || json.date.cities == null){
+        return false;
+    }
+    var arr = json.date.cities;
+    var citySelect = $("#select-city");
+    citySelect.empty();
+    arr.sort();
+    for(var i = 0;i < arr.length;i++){
+        var opt = "<option>" + arr[i] + "</option>";
+        citySelect.append(opt);
+    }
+}
+
+/** 获取城市失败 */
+function getCityFail(response){
 
 }
 
 /** 注册参数 */
-function registry(){
-
+function registry(userNameInput,passwordOrigin,passwordEnsure,country,province,city,addressDetail,sex,company,mobile,email,hobby){
+    
 }
