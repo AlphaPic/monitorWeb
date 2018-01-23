@@ -6,14 +6,253 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="lib/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">
+    <!-- <link href="lib/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet"> -->
+    <link href="lib/Flat-UI/dist/css/flat-ui.css" rel="stylesheet">
+    <link href="mainpage.css" rel="stylesheet">
     <link rel="shortcut icon" href="lib/Flat-UI/img/favicon.ico">
 </head>
 <body>
     <div class="container">
+        <!-- 导航栏 -->
+        <div class="navbar-layout">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                    <span class="sr-only">Toggle navigation</span>
+                    </button>
+                    <a class="navbar-brand" href="#">Flat UI</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                    <ul class="nav navbar-nav">
+                    <li class="active"><a href="#fakelink">Products</a></li>
+                    <li><a href="#fakelink">Features</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" action="#" role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                        <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><span class="fui-search"></span></button>
+                        </span>
+                        </div>
+                    </div>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
+
         
+
+        <!-- 左边栏 -->
+        <div class="left-border-layout left-border-detail col-sm-4">
+            <div class="user-permit-detail user-permit-layout">
+                <p>编辑权限</p>
+                <div class="bootstrap-switch-square">
+                    <input type="checkbox" checked data-toggle="switch" id="custom-switch-03" data-on-text="<span class='fui-check'></span>" data-off-text="<span class='fui-cross'></span>"/>开发
+                </div>
+                <select data-toggle="select" multiple class="form-control multiselect multiselect-info mrs mbm">
+                    <option value="0" selected>ALL</option>
+                    <option value="1">范文龙</option>
+                    <option value="2">孙帅武</option>
+                    <option value="3">王冲</option>
+                </select>
+                <div class="bootstrap-switch-square">
+                    <input type="checkbox" checked data-toggle="switch" id="custom-switch-03" data-on-text="<span class='fui-check'></span>" data-off-text="<span class='fui-cross'></span>"/>测试
+                </div>
+                <select data-toggle="select" multiple class="form-control multiselect multiselect-info mrs mbm">
+                    <option value="0" selected>ALL</option>
+                    <option value="1">程杏和</option>
+                    <option value="2">刘星星</option>
+                </select>
+            </div>
+            <div class="message-panel-detail message-panel-layout">
+                <div class="alert error-msg msg-layout">
+                    错误
+                    <button class="btn">已解决</button>
+                    <button class="btn">暂时忽略</button>
+                </div>
+                <div class="alert warn-msg msg-layout">
+                    警告
+                    <button class="btn">已解决</button>
+                    <button class="btn">暂时忽略</button>
+                </div>
+                <div class="alert info-msg msg-layout">
+                    通知
+                    <button class="btn">已解决</button>
+                    <button class="btn">暂时忽略</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主体面板 -->
+        <div class="main-pane-layout main-pane-detail col-sm-8">
+            <p>预览页面</p>
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#preview-pane" data-toggle="tab">预览</a>
+                </li>
+                <li>
+                    <a href="#edit-pane" data-toggle="tab">编辑</a>
+                </li>
+            </ul>
+                <div id="myTabContent" class="tab-content">
+
+                    <div class="tab-pane fade" id="edit-pane">
+                        <!-- 编辑框布局 -->
+                        <div class="api-basic-info-edit-layout">
+                            <table class="table table-bordered table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>说明</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>API</td>
+                                        <td><form role="form"><div class="form-group"><input type="text" class="form-control input-sm" placeholder="Enter API name"></div></form></td>
+                                    </tr>
+                                    <tr>
+                                        <td>版本</td>
+                                        <td><form role="form"><div class="form-group"><input type="text" class="form-control input-sm" placeholder="Enter version(eg. 1.0.0)"></div></form></td>
+                                    </tr>
+                                    <tr>
+                                        <td>作者</td>
+                                        <td><form role="form"><div class="form-group"><input type="text" class="form-control input-sm" placeholder="Enter auther"></div></form></td>
+                                    </tr>
+                                    <tr>
+                                        <td>请求方式</td>
+                                        <td><form role="form"><div class="form-group"><input type="text" class="form-control input-sm" placeholder="Enter request method(eg. POST)"></div></form></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 请求和响应的信息 -->
+                        <div class="request-response-nav-layout request-response-nav-detail">
+                            <form class="form-inline" role="form">
+                            <div class="form-group col-sm-6">
+                                <label>request</label>
+                                <input type="text" class="form-control input-sm" list="request-list" placeholder="Enter request">
+                                <datalist id="request-list">
+                                    <option>InvoiceCancelRequest</option>
+                                    <option>InvoiceSaveRequest</option>
+                                    <option>InvoiceDetailsRequest</option>
+                                </datalist>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label>response</label>
+                                <input type="text" class="form-control input-sm" list="response-list" placeholder="Enter response">
+                                <datalist id="response-list">
+                                    <option>InvoiceSaveResponseVo</option>
+                                    <option>InvoiceDetailsResponseVo</option>
+                                    <option>InvoiceCancelResponseVO</option>
+                                </datalist>
+                            </div>
+                            </form>
+                        </div>
+
+
+                        <!-- 请求参数列表 -->
+                        <div class="request-param-table-layout">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类型</th>
+                                        <th>说明</th>
+                                        <th>样例值</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>userName</td>
+                                        <td>String</td>
+                                        <td>用户名</td>
+                                        <td>Jack</td>
+                                    </tr>
+                                    <tr>
+                                        <td>age</td>
+                                        <td>Integer</td>
+                                        <td>年龄</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>sex</td>
+                                        <td>String</td>
+                                        <td>性别</td>
+                                        <td>male</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 响应参数列表 -->
+                        <div class="response-param-table-layout">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类型</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>userName</td>
+                                        <td>String</td>
+                                        <td>用户名</td>
+                                    </tr>
+                                    <tr>
+                                        <td>age</td>
+                                        <td>Integer</td>
+                                        <td>年龄</td>
+                                    </tr>
+                                    <tr>
+                                        <td>sex</td>
+                                        <td>String</td>
+                                        <td>性别</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 请求链接 -->
+                        <div class="request-link-layout">
+                            <div class="request-link-detail">
+                                <button onclick="showRequestDetail()" class="btn btn-default btn-req" id="showRequestDetail1">
+                                    <span class="fui-arrow-left"></span>
+                                </button>
+                            </div>
+                            <div class="request-link-detail">
+                                <button class="btn btn-default btn-req"><span class="fui-arrow-left"></span></button>
+                            </div>
+                            <div class="request-link-detail">
+                                <button class="btn btn-default btn-req"><span class="fui-arrow-left"></span></button>
+                            </div>
+                            <div class="request-link-add-detail">
+                                <button class="btn">
+                                    <span class="fui-plus-circle"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade in active" id="preview-pane">
+                    </div>
+                </div>
+                <script>
+                    $(function () {
+                        $('#myTab li:eq(1) a').tab('show');
+                    });
+                </script>
+        </div>
     </div>
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="lib/Flat-UI/dist/js/flat-ui.min.js"></script>
+    <script src="mainpage.js"></script>
+    <script src="lib/Flat-UI/docs/assets/js/prettify.js"></script>
+    <script src="lib/Flat-UI/docs/assets/js/application.js"></script>
 </body>
 </html>
