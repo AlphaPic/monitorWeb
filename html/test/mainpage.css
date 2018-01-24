@@ -2,7 +2,7 @@
 body{
     --std-font-size:5;
 
-    --color-red:red;
+    --color-red:rgb(233, 223, 223);
 
     font-size: 13px;
 }
@@ -27,8 +27,15 @@ td{
     margin-bottom: 20px;
 }
 
+.permit-layout{
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
 .message-panel-layout{
     border-radius: 10px;
+    padding-bottom: 20px;
 }
 
 
@@ -40,9 +47,9 @@ td{
 
 .msg-layout{
     border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3px;
 }
 
 .api-basic-info-edit-layout{
@@ -58,8 +65,23 @@ td{
 }
 
 .request-link-layout{
-    border: 2px solid;
+    /* border: 2px solid; */
     margin-top: 20px;
+}
+
+.permit-allow-layout{
+    margin-left: 20%;
+    padding-right: 20px;
+}
+
+.api-save-cancel-edit-layout{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.api-basic-info-edit-layout{
+    
 }
 
 /********   细节设置   ********/
@@ -70,7 +92,7 @@ td{
 
 .main-pane-detail{
     border-style:solid;
-    border-color:#527394;
+    border-color:#ffffff;
 }
 
 .user-permit-detail{
@@ -80,7 +102,7 @@ td{
 
 .message-panel-detail{
     border-style:solid;
-    border-color:#48af4d;
+    border-color:#527394;
 }
 
 
@@ -143,4 +165,17 @@ td{
 
 .btn-catton{
     transform: rotate(-90deg);
+}
+
+.edit-title-detail{
+    /* margin-top: 5px; */
+    text-align: center;
+    font-size: 30px;
+    background-color: #527394;
+}
+
+.msg-title-detail{
+    text-align: center;
+    font-size: 30px;
+    background-color: #527394;
 }
