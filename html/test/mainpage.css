@@ -9,6 +9,15 @@ body{
 
 td{
     max-height: 10px;
+    /* text-align: center; */
+}
+
+th{
+    text-align: center;
+}
+
+tr{
+    text-align: center;
 }
 
 /********     布局     ********/
@@ -25,6 +34,12 @@ td{
 .user-permit-layout{
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+.user-root-layout{
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 0%;
 }
 
 .permit-layout{
@@ -71,7 +86,7 @@ td{
 
 .permit-allow-layout{
     margin-left: 20%;
-    padding-right: 20px;
+    padding-right: 11px;
 }
 
 .api-save-cancel-edit-layout{
@@ -81,8 +96,45 @@ td{
 }
 
 .api-basic-info-edit-layout{
-    
+
 }
+
+
+
+.request-table-preview-layout{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.request-reponse-preview-layout{
+    margin-top: 5%;
+}
+
+.request-reponse-edit-layout{
+    margin-bottom:5%; 
+}
+
+.api-basic-info-preview-layout{
+    margin-top: 20px;
+}
+
+thead.table-head-color{
+    text-align: center;
+    background-color: #527394;
+}
+
+caption.caption-info{
+    text-align: center;
+    font-size: 20px;
+    color: #527394;
+    font-weight: 800;
+}
+
+.user-api-layout{
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
 
 /********   细节设置   ********/
 .left-border-detail{
@@ -96,6 +148,14 @@ td{
 }
 
 .user-permit-detail{
+    border-style:solid;
+    border-color:#527394;
+}
+.user-root-detail{
+    border-style:solid;
+    border-color:#527394;
+}
+.api-api.detail{
     border-style:solid;
     border-color:#527394;
 }
@@ -178,4 +238,29 @@ td{
     text-align: center;
     font-size: 30px;
     background-color: #527394;
+}
+
+a.left-border-text{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #527394;
+}
+
+div.btn-locate-center{
+    text-align: center;
+}
+
+p.caption-detail{
+    text-align: center;
+    background-color: #527394;
+}
+
+p.name-detail{
+    text-align: center;
+}
+
+div.div-outer-frame{
+    border-radius: 5px;
+    border-style: solid;
 }

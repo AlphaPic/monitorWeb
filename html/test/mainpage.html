@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>wiki</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- <link href="lib/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet"> -->
     <link href="lib/Flat-UI/dist/css/flat-ui.css" rel="stylesheet">
     <link href="mainpage.css" rel="stylesheet">
     <link rel="shortcut icon" href="lib/Flat-UI/img/favicon.ico">
+    <style>
+        ::-webkit-scrollbar {
+            display: none
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <!-- 导航栏 -->
         <div class="navbar-layout">
             <!-- navbar-inverse -->
-            <nav class="navbar " role="navigation">
+            <nav class="navbar navbar-inverse" role="navigation">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-                    <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">Toggle navigation</span>
                     </button>
                     <a class="navbar-brand" href="#">LVMAMA WIKI</a>
                 </div>
@@ -29,53 +36,74 @@
                     <li><a href="#fakelink">Features</a></li> -->
                     </ul>
                     <form class="navbar-form navbar-right" action="#" role="search">
-                    <div class="form-group">
-                        <div class="input-group">
-                        <input class="form-control" id="navbarInput-01" type="search" placeholder="Enter API Name">
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn"><span class="fui-search"></span></button>
-                        </span>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" id="navbarInput-01" type="search" placeholder="Enter API Name">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn">
+                                        <span class="fui-search"></span>
+                                    </button>
+                                </span>
+                            </div>
                         </div>
-                    </div>
                     </form>
-                </div><!-- /.navbar-collapse -->
+                </div>
+                <!-- /.navbar-collapse -->
             </nav>
         </div>
 
-        
+
 
         <!-- 左边栏 -->
         <div class="left-border-layout left-border-detail col-sm-4">
+            <!-- 管理员权限 -->
+            <div class="user-root-detail user-root-layout">
+                <p class="edit-title-detail">管理员</p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item left-border-text">用户管理</a>
+                    <a href="#" class="list-group-item left-border-text">统计</a>
+                </div>
+            </div>
+            <!-- 接口权限 -->
             <div class="user-permit-detail user-permit-layout">
-                <p class="edit-title-detail">页面权限</p>
+                <p class="edit-title-detail">权限</p>
                 <div class="bootstrap-switch-square">
-                    <h7 class="permit-allow-layout">是否赋值权限于他人</h7><input type="checkbox" checked data-toggle="switch" id="custom-switch-03" data-on-text="<span class='fui-check'></span>" data-off-text="<span class='fui-cross'></span>"/>
+                    <h7 class="permit-allow-layout">是否赋编辑权限于他人</h7>
+                    <input type="checkbox" checked data-toggle="switch" id="custom-switch-03" data-on-text="<span class='fui-check'></span>"
+                        data-off-text="<span class='fui-cross'></span>" />
                 </div>
                 <select data-toggle="select" multiple class="form-control multiselect multiselect-info mrs mbm permit-layout">
                     <option value="0" selected>全部</option>
                     <option value="1">全部接口开发</option>
                     <option value="2">全部接口测试</option>
                 </select>
+                <hr>
             </div>
+            <!-- API接口列表 -->
+            <div class="user-permit-detail user-permit-layout">
+                <p class="edit-title-detail">API接口</p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item left-border-text">接口列表</a>
+                    <a href="#" class="list-group-item left-border-text">我的接口</a>
+                </div>
+            </div>
+            <!-- 消息 -->
             <div class="message-panel-detail message-panel-layout">
                 <p class="msg-title-detail">消息</p>
                 <div class="alert alert-info alert-dismissable msg-layout">
-                    <button type="button" class="close" data-dismiss="alert"
-                            aria-hidden="true">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                         &times;
                     </button>
                     您的框架还未完成，请继续努力
                 </div>
                 <div class="alert alert-danger alert-dismissable msg-layout">
-                    <button type="button" class="close" data-dismiss="alert"
-                            aria-hidden="true">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                         &times;
                     </button>
                     您的框架还未完成，请继续努力
                 </div>
                 <div class="alert alert-warning alert-dismissable msg-layout">
-                    <button type="button" class="close" data-dismiss="alert"
-                            aria-hidden="true">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                         &times;
                     </button>
                     您的框架还未完成，请继续努力
@@ -85,12 +113,12 @@
 
         <!-- 主体面板 -->
         <div class="main-pane-layout main-pane-detail col-sm-8">
-            <ul id="myTab" class="nav nav-tabs">
+            <ul id="myTab" class="nav nav-tabs nav-justified">
                 <li class="active">
                     <a href="#preview-pane" data-toggle="tab" id="preview-tab">预览</a>
                 </li>
                 <li>
-                    <a href="#edit-pane" data-toggle="tab"  id="edit-tab">编辑</a>
+                    <a href="#edit-pane" data-toggle="tab" id="edit-tab">编辑</a>
                 </li>
             </ul>
             <div id="myTabContent" class="tab-content">
@@ -101,150 +129,313 @@
                         <button class="btn btn-danger" id="cancelRequestBtn">取消</button>
                     </div>
                     <div class="api-basic-info-edit-layout">
-                        <table class="table table-bordered table-condensed">
-                            <thead>
-                                <tr>
-                                    <th>名称</th>
-                                    <th>说明</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>API</td>
-                                    <td><form role="form"><div class="form-group"><input type="text" class="form-control input-sm" id="input-api-name" placeholder="Enter API name"></div></form></td>
-                                </tr>
-                                <tr>
-                                    <td>版本</td>
-                                    <td><form role="form"><div class="form-group"><input type="text" class="form-control input-sm" id="input-version-name" placeholder="Enter version(eg. 1.0.0)"></div></form></td>
-                                </tr>
-                                <tr>
-                                    <td>作者</td>
-                                    <td><form role="form"><div class="form-group"><input type="text" class="form-control input-sm" id="input-auther-name" placeholder="Enter auther"></div></form></td>
-                                </tr>
-                                <tr>
-                                    <td>请求方式</td>
-                                    <td><form role="form"><div class="form-group"><input type="text" class="form-control input-sm" id="input-requestWay-name" placeholder="Enter request method(eg. POST)"></div></form></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- 请求和响应的信息 -->
-                    <div class="request-response-nav-layout request-response-nav-detail">
-                        <form class="form-inline" role="form">
-                        <div class="form-group col-sm-6">
-                            <label>request</label>
-                            <input type="text" class="form-control input-sm" list="request-list" placeholder="Enter request">
-                            <datalist id="request-list">
-                                <option>InvoiceCancelRequest</option>
-                                <option>InvoiceSaveRequest</option>
-                                <option>InvoiceDetailsRequest</option>
-                            </datalist>
+                        <div class="request-reponse-edit-layout div-outer-frame">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p class="caption-detail">基本信息</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="name-detail">名称</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-sm" id="input-api-name" placeholder="Enter API name">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="name-detail">版本</p>
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <select data-toggle="select" class="form-control select select-inverse select-sm">
+                                        <option value="1.0.0">1.0.0</option>
+                                        <option value="2.0.0">2.0.0</option>
+                                        <option value="3.0.0">3.0.0</option>
+                                        <option value="4.0.0">4.0.0</option>
+                                        <option value="5.0.0">5.0.0</option>
+                                        <option value="6.0.0">6.0.0</option>
+                                        <option value="7.0.0">7.0.0</option>
+                                        <option value="8.0.0">8.0.0</option>
+                                        <option value="9.0.0">9.0.0</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="name-detail">作者</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-sm" id="input-auther-name" placeholder="Enter author name">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="name-detail">请求方式</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <select data-toggle="select" multiple class="form-control multiselect multiselect-info mrs mbm input-sm">
+                                        <option value="GET" selected>GET</option>
+                                        <option value="POST">POST</option>
+                                        <option value="UPDATE">UPDATE</option>
+                                        <option value="DELETE">DELETE</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group col-sm-6">
-                            <label>response</label>
-                            <input type="text" class="form-control input-sm" list="response-list" placeholder="Enter response">
-                            <datalist id="response-list">
-                                <option>InvoiceSaveResponseVo</option>
-                                <option>InvoiceDetailsResponseVo</option>
-                                <option>InvoiceCancelResponseVO</option>
-                            </datalist>
+
+                        <!-- 请求和响应 -->
+                        <div class="request-reponse-edit-layout row">
+                            <div class="col-sm-6 btn-locate-center">
+                                <!-- <label>Request:</label> -->
+                                <button class="btn btn-primary" type="button" id="RopRequest-btn" data-toggle="modal" data-target="#searchModal" >
+                                    RopRequest
+                                </button>
+                            </div>
+                            <div class="col-sm-6 btn-locate-center">
+                                <!-- <label>Response:</label> -->
+                                <button class="btn btn-primary" type="button" id="RopResponse-btn" data-toggle="modal" data-target="#searchModal">
+                                    RopResponse
+                                </button>
+                            </div>
                         </div>
-                        </form>
-                    </div>
 
-
-                    <!-- 请求参数列表 -->
-                    <div class="request-param-table-layout">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>名称</th>
-                                    <th>类型</th>
-                                    <th>说明</th>
-                                    <th>样例值</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>userName</td>
-                                    <td>String</td>
-                                    <td>用户名</td>
-                                    <td>Jack</td>
-                                </tr>
-                                <tr>
-                                    <td>age</td>
-                                    <td>Integer</td>
-                                    <td>年龄</td>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <td>sex</td>
-                                    <td>String</td>
-                                    <td>性别</td>
-                                    <td>male</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- 响应参数列表 -->
-                    <div class="response-param-table-layout">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>名称</th>
-                                    <th>类型</th>
-                                    <th>说明</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>userName</td>
-                                    <td>String</td>
-                                    <td>用户名</td>
-                                </tr>
-                                <tr>
-                                    <td>age</td>
-                                    <td>Integer</td>
-                                    <td>年龄</td>
-                                </tr>
-                                <tr>
-                                    <td>sex</td>
-                                    <td>String</td>
-                                    <td>性别</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- 请求链接 -->
-                    <div class="request-link-layout">
-                        <div class="request-link-detail" id="showRequestDetail-1">
-                            <button class="btn btn-default btn-req" onclick="showRequestDetail()">
-                                <span class="fui-arrow-left"></span>
-                            </button>
+                        <!-- 模态框 -->
+                        <div class="bd-example">
+                            <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <!-- <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="sr-only">Close</span>
+                                            </button>
+                                        </div> -->
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="api-search"  placeholder="Enter api name...">
+                                                </div>
+                                                <div class="form-group" >
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="request-link-add-detail">
-                            <button class="btn" id="addRequestBtn">
-                                <span class="fui-plus-circle"></span>
-                            </button>
+
+                        <!-- 请求参数列表 -->
+                        <div class="request-reponse-edit-layout">
+                            <table class="table table-bordered">
+                                <thead class="table-head-color">
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类型</th>
+                                        <th>说明</th>
+                                        <th>样例值</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>userName</td>
+                                        <td>String</td>
+                                        <td>用户名</td>
+                                        <td>Jack</td>
+                                    </tr>
+                                    <tr>
+                                        <td>age</td>
+                                        <td>Integer</td>
+                                        <td>年龄</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>sex</td>
+                                        <td>String</td>
+                                        <td>性别</td>
+                                        <td>male</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 响应参数列表 -->
+                        <div class="request-reponse-edit-layout">
+                            <table class="table table-bordered">
+                                <thead class="table-head-color">
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类型</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>userName</td>
+                                        <td>String</td>
+                                        <td>用户名</td>
+                                    </tr>
+                                    <tr>
+                                        <td>age</td>
+                                        <td>Integer</td>
+                                        <td>年龄</td>
+                                    </tr>
+                                    <tr>
+                                        <td>sex</td>
+                                        <td>String</td>
+                                        <td>性别</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 请求链接 -->
+                        <div class="request-reponse-edit-layout">
+                            <div class="request-link-detail" id="showRequestDetail-1">
+                                <button class="btn btn-default btn-req" onclick="showRequestDetail()">
+                                    <span class="fui-arrow-left"></span>
+                                </button>
+                            </div>
+                            <div class="request-link-add-detail">
+                                <button class="btn" id="addRequestBtn">
+                                    <span class="fui-plus-circle"></span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                    <div class="tab-pane fade in active" id="preview-pane">
 
+
+
+                <div class="tab-pane fade in active" id="preview-pane">
+                    <div class="api-basic-info-preview-layout">
+                        <!-- 基本信息 -->
+                        <div class="request-reponse-preview-layout">
+                            <table class="table table-bordered table-condensed" id="baseinfo-table">
+                                <thead class="table-head-color">
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>API</td>
+                                        <td>api.com.user.login</td>
+                                    </tr>
+                                    <tr>
+                                        <td>版本号</td>
+                                        <td>1.0.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>作者</td>
+                                        <td>fanwenlong</td>
+                                    </tr>
+                                    <tr>
+                                        <td>调用方式</td>
+                                        <td>POST</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 请求和响应 -->
+                        <div class="request-reponse-preview-layout row">
+                            <div class="col-sm-6 btn-locate-center">
+                                <!-- <label>Request:</label> -->
+                                <button title="Tooltip on right" data-placement="right" data-toggle="tooltip" class="btn btn-primary mrs" type="button">
+                                    RopRequest
+                                </button>
+                            </div>
+                            <div class="col-sm-6 btn-locate-center">
+                                <!-- <label>Response:</label> -->
+                                <button title="Tooltip on right" data-placement="right" data-toggle="tooltip" class="btn btn-primary mrs" type="button">
+                                    RopResponse
+                                </button>
+                            </div>
+                        </div>
+                        <!-- 请求表格 -->
+                        <div class="request-reponse-preview-layout">
+                            <table class="table table-bordered table-condensed table-striped" id="baseinfo-table">
+                                <caption class="caption-info">Request</caption>
+                                <thead class="table-head-color">
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类型</th>
+                                        <th>描述</th>
+                                        <th>示例值</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>userName</td>
+                                        <td>String</td>
+                                        <td>用户名</td>
+                                        <td>Jack</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 响应表格 -->
+                        <div class="request-reponse-preview-layout">
+                            <table class="table table-bordered table-condensed table-striped" id="baseinfo-table">
+                                <caption class="caption-info">Response</caption>
+                                <thead class="table-head-color">
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类型</th>
+                                        <th>描述</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>userName</td>
+                                        <td>String</td>
+                                        <td>用户名</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 请求链接 -->
+                        <div class="request-link-layout">
+                            <div class="request-link-detail" id="showRequestDetail-1">
+                                <button class="btn btn-default btn-req" onclick="showRequestDetail()">
+                                    <span class="fui-arrow-left"></span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div>
+
+    </div>
+    </div>
 
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
     <script src="lib/Flat-UI/dist/js/flat-ui.min.js"></script>
     <script src="mainpage.js"></script>
     <script src="lib/Flat-UI/docs/assets/js/prettify.js"></script>
     <script src="lib/Flat-UI/docs/assets/js/application.js"></script>
+
+
 </body>
+
 </html>

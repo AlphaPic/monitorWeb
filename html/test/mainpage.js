@@ -17,40 +17,26 @@ function createRequestDiv(lastRequestNodeId){
 /** 预览页面 */
 function previewPage(){
     var root = $("#preview-pane");
-    root.empty();
     /** 创建基本信息节点 */
-    var baseInfoString = '<div class="api-basic-info-edit-layout"></div>';
+    var baseInfoString = '';
 
     root.append(baseInfoString);
 
     var baseInfoNode = $(".api-basic-info-edit-layout");
 
-    baseInfoNode.append(`<table class="table table-bordered table-condensed" id="baseinfo-table">\
-                            <thead>\
-                                <tr>\
-                                    <th>名称</th>\
-                                    <th>说明</th>\
-                                </tr>\
-                            </thead>\
-                            <tbody>\
-                                <tr>\
-                                    <th>API</th>\
-                                    <th>${$("#input-api-name").val()}</th>\
-                                </tr>\
-                                <tr>\
-                                    <th>版本号</th>\
-                                    <th>说明</th>\
-                                </tr>\
-                                <tr>\
-                                    <th>作者</th>\
-                                    <th>说明</th>\
-                                </tr>\
-                                <tr>\
-                                    <th>调用方式</th>\
-                                    <th>说明</th>\
-                                </tr>\
-                            </tbody>\
-                        </table>`);
+    baseInfoNode.append(``);
+
+    /** 创建请求和响应参数节点 */
+
+    /** 创建请求链接节点 */
+}
+
+/** 查找api */
+function searchApi(keyVal){
+    if(keyVal === null || keyVal === undefined || keyVal === ""){
+        return false;
+    }
+
     
 }
 
@@ -85,4 +71,49 @@ $(document).on('ready',function(){
     $("#edit-tab").click(function(){
         console.log("edit");
     });
+
+    /** api查找框 */
+    $("#api-search").on("input", function () {
+        
+    });
+
+    /** 查找框响应回车键 */
+    $("#api-search").keypress(function(){
+        var keyCode = event.keyCode;
+        var keyVal  = $(this).val();
+
+        if(keyCode !== 13){
+            return true;
+        }else{
+            searchApi(keyVal);
+            return false;
+        }
+    });
+
+    /** 请求按钮按下事件 */
+    $("#RopRequest-btn").click(function(){
+        // alert("hello");
+    });
+
+    /** 响应按钮按下事件 */
+    $("#RopResponse-btn").click(function(){
+        // alert("hello");
+    });
+
+    $(function () {
+        $('[data-toggle=tooltip]').tooltip();
+    });
+
+    
+
+    /** 查找模态框的显示 */
+    $('#searchModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        // modal.find('.modal-title').text('Enter The ' + recipient)
+        // modal.find('.modal-body input').val(recipient)
+      })
 });

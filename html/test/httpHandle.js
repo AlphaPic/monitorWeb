@@ -46,3 +46,13 @@ function getLocalCookie(){
     // for()
     return "";
 }
+
+
+
+/** 一个基本的promise请求 */
+function ajax(method,url,data){
+    var request = new XMLHttpRequest();
+    return new Promise(function(success,fail){
+        
+    });
+}
