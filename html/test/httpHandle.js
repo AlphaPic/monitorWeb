@@ -53,6 +53,16 @@ function getLocalCookie(){
 function ajax(method,url,data){
     var request = new XMLHttpRequest();
     return new Promise(function(success,fail){
-        
+        request.onreadystatechange = function(){
+            if(request.readyState === 4){
+                if(request.status === 200){
+                    success(request.responseText);
+                }else{
+                    fail(request.status);
+                }
+            }
+        };
+        request.open(method, url);
+        request.send(data);
     });
 }
